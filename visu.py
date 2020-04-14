@@ -1,5 +1,10 @@
 import matplotlib
 import matplotlib.pyplot as plt
+from try_this_func import squaring as sq
+
+go = sq(3)
+print('The results is '+str(go))
+
 print (matplotlib.__version__)
 print(plt.style.available)
 
