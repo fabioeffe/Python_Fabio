@@ -15,6 +15,9 @@ no = [2,4,5,1]
 
 x_pos = [i for i, _ in enumerate (x)]
 
+fig = plt.figure(" Histogram one ")
+
+
 plt.bar(x_pos, no, color='green')
 plt.xlabel("Phone company".title())
 plt.ylabel("phones sold (millions)")
