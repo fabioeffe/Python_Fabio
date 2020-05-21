@@ -11,6 +11,8 @@ data = data+1
 # im = plt.imshow(data, cmap='gist_gray_r', vmin=0, vmax=1)
 # im = plt.imshow(data)
 plt.imshow(data)
+
+
 # def init():
 #     im.set_data(np.zeros((nx, ny)))
 

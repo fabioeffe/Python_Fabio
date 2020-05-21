@@ -10,11 +10,22 @@ def button(event):
 def name_submit(event): # if using the method .bind then you need to put 'event'
     print('Your name is {}'.format(e1.get()))
 
+def foo(event):
+    print('Working just fine!')
+
+def click_counter():
+    global counter
+    counter+=1
+    button_counter.config(text=counter)
+
+
+counter = 0    
 # create the window
 root = tkt.Tk()
 root.title("OCT shell")
 root.iconbitmap("OCT_AGI_icon.ico") #insert the icon (not really useful)
-root.geometry("1000x700")
+root.geometry("1000x700") # define teh window size
+
 photo= tkt.PhotoImage(file = "wave_move.gif")
 w = tkt.Label(root,image=photo)
 # w.grid(row=1,column=0)
@@ -27,12 +38,18 @@ label1= tkt.Label(text='What is your name?',fg='blue')
 e1 = tkt.Entry(root)
 button1 = tkt.Button(text='Submit!', fg='Blue')
 button1.bind('<Button-1>',name_submit)
-button1.bind('<Button-1>',button)
+# button1.bind('<Button-1>',button)
+# root.bind('<Return>',foo)
+
+button2=tkt.Button(root,text='Click me!',command=click_counter)
+button_counter= tkt.Label(root, text=counter)
 
 label1.grid(row=0,column=0, sticky=tkt.E)
 e1.grid(row=0,column=1)
 button1.grid(row=0,column=2,pady=100)
 
+button2.grid(row=1,column=0)
+button_counter.grid(row=1,column=1,pady=100)
 # frame1 = tkt.Frame(root)
 # frame2 = tkt.Frame(root)
 
